@@ -1,0 +1,122 @@
+/* General styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background: #007bff;
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  padding: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.event-section {
+  padding: 20px;
+  background: #fff;
+  margin-top: 20px;
+}
+
+.title-name {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.event-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.event-item {
+  background: #f8f9fa;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.event-details {
+  padding: 10px;
+}
+
+.event-title {
+  color: #007bff;
+  font-size: 20px;
+}
+
+.event-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-button {
+  padding: 5px 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.event-button:hover {
+  background-color: #0056b3;
+}
+
+.checkbtn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .checkbtn {
+    display: block;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    transition: all 0.5s;
+  }
+
+  nav ul.show {
+    left: 0;
+  }
+
+  nav ul li {
+    text-align: center;
+    width: 100%;
+  }
+
+  input[type="checkbox"]:checked ~ ul {
+    left: 0;
+  }
+}

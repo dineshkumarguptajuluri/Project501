@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADD AN EVENT</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap">
+  <link rel="stylesheet" href="/css/addEvent.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="logos">
+      <label class="logo">GAME ON</label>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <i class="fas fa-times" onclick="hideMenu()" style="display:none;"></i>
+      <ul>
+       
+        <li><a href="allEvents">ALL EVENTS</a></li>
+        <li><a href="addEvent">ADD EVENT</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="/">LOGOUT</a></li>
+      </ul>
+    </div>
+    <i class="fas fa-bars" onclick="showMenu()"></i>
+  </nav>
+
+  <section class="sectionCourse">
+    <div class="container">
+      <div class="title-wrapper">
+        <h2 class="section-title">Add a <strong>EVENT</strong></h2>
+      </div>
+      <form action="/uploadEvent" method="POST">
+        <input type="hidden" name="_csrf" value="csrfTokenPlaceholder">
+        <input type="text" name="EventImg" placeholder="Event Image URL">
+        <input type="text" name="EventTitle" placeholder="Event Title">
+        <textarea name="content" placeholder="Event Description" minlength="10"></textarea>
+        <input type="text" name="EventLocation" placeholder="Event Venue">
+        <input type="text" name="EventMembers" placeholder="Event Capacity">
+        <label for="EventStartDate">Event Start Date</label>
+        <input type="date" name="EventStartDate">
+        <label for="EventTime">Event Time</label>
+        <input type="time" name="EventTime">
+        <label for="EventEnd">Event End Date</label>
+        <input type="date" name="EventEndDate">
+        <input type="submit" value="ADD EVENT">
+      </form>
+    </div>
+  </section>
+
+  <footer></footer>
+
+  <script>
+    function showMenu() {
+      document.getElementById('navLinks').style.display = 'block';
+      document.querySelector('.fa-bars').style.display = 'none';
+      document.querySelector('.fa-times').style.display = 'block';
+    }
+
+    function hideMenu() {
+      document.getElementById('navLinks').style.display = 'none';
+      document.querySelector('.fa-bars').style.display = 'block';
+      document.querySelector('.fa-times').style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>
